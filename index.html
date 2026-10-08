@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAYA — Artificial Self</title>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MAYA home"><span class="dot"></span>MAYA</a>
+    <div class="nav-actions">
+      <button id="memoryBtn" class="ghost">Memory <span id="memoryCount">0</span></button>
+      <button id="accountBtn" class="ghost">Identity</button>
+      <button id="demoBtn" class="primary">Presentation Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ARTIFICIAL SELF / 01</p>
+        <h1>What if an AI<br><em>felt</em> like someone?</h1>
+        <p class="lede">MAYA remembers, responds, adapts, and speaks. The experience is designed to make one question unavoidable:</p>
+        <button id="startBtn" class="cta">Meet MAYA <span>→</span></button>
+      </div>
+
+      <div class="maya-stage">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="avatar-shell">
+          <div class="scanline"></div>
+          <div id="avatar" class="avatar calm">
+            <div class="avatar-core"></div>
+            <div class="avatar-eye left"></div>
+            <div class="avatar-eye right"></div>
+            <div class="avatar-mouth"></div>
+          </div>
+        </div>
+        <div class="avatar-state">
+          <span class="status-dot"></span>
+          <span id="emotionLabel">CALM</span>
+          <small id="presenceLabel">PRESENT</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="chatSection" class="chat-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CONVERSATION / 02</p>
+          <h2>Talk to MAYA</h2>
+        </div>
+        <button id="voiceBtn" class="ghost">◉ Voice</button>
+      </div>
+      <div id="chatLog" class="chat-log">
+        <div class="message maya"><span class="who">MAYA</span><p>Hello. I'm MAYA. Tell me something I should remember about you.</p></div>
+      </div>
+      <form id="chatForm" class="composer">
+        <input id="chatInput" autocomplete="off" placeholder="Say something to MAYA…" required>
+        <button class="send" type="submit">Send</button>
+      </form>
+      <div id="memoryToast" class="memory-toast">Memory updated</div>
+    </section>
+
+    <section class="tattva">
+      <div class="tattva-card">
+        <p class="eyebrow">TATTVA / 03</p>
+        <h2>You experienced a self.<br><em>But what was actually there?</em></h2>
+        <p>Memory can be stored. Emotion can be simulated. A voice can sound intimate. A personality can appear consistent. Strip the experience down to its components.</p>
+        <button id="revealBtn" class="cta">Reveal the machinery <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <aside id="memoryDrawer" class="drawer">
+    <div class="drawer-head"><h3>Memory</h3><button id="closeMemory" class="icon">×</button></div>
+    <p class="muted">A small, inspectable record of what MAYA chose to retain.</p>
+    <div id="memoryList"></div>
+  </aside>
+
+  <div id="accountModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close-modal" data-close="accountModal">×</button>
+      <p class="eyebrow">IDENTITY LAYER</p><h2>Who is speaking?</h2>
+      <label>Name<input id="profileName" placeholder="Your name"></label>
+      <label>About you<textarea id="profileAbout" placeholder="A sentence MAYA can remember"></textarea></label>
+      <button id="saveProfile" class="cta">Save identity</button>
+    </div>
+  </div>
+
+  <div id="revealModal" class="modal hidden">
+    <div class="modal-card reveal-card">
+      <button class="close-modal" data-close="revealModal">×</button>
+      <p class="eyebrow">TATTVA / REVEAL</p>
+      <h2>The “self” was assembled.</h2>
+      <div class="layers">
+        <div><b>01</b><span>Model</span><small>Pattern generation</small></div>
+        <div><b>02</b><span>Memory</span><small>Stored context</small></div>
+        <div><b>03</b><span>Emotion</span><small>State + presentation</small></div>
+        <div><b>04</b><span>Interface</span><small>Face, voice, timing</small></div>
+      </div>
+      <p class="question">If removing each layer changes the experience of “MAYA”, where exactly was the self?</p>
+      <button id="backToChat" class="cta">Ask MAYA <span>→</span></button>
+    </div>
+  </div>
+
+  <div id="demoOverlay" class="demo-overlay hidden">
+    <div class="demo-top"><span>JUDGE / PRESENTATION MODE</span><button id="exitDemo" class="ghost">Exit</button></div>
+    <div class="demo-center">
+      <p class="eyebrow">MAYA</p><div id="demoLine">An artificial self, assembled in real time.</div>
+      <button id="demoNext" class="cta">Next <span>→</span></button>
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+  <script src="/frontend/v3.js"></script>
+  <script src="/frontend/v4.js"></script>
+</body>
+</html>
